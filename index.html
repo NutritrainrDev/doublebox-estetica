@@ -6,7 +6,7 @@
 <title>Doublebox Estética Automotiva | Maria da Graça, Rio de Janeiro</title>
 <meta name="description" content="Doublebox Estética Automotiva em Maria da Graça, Rio: lavagem, limpeza técnica, higienização com ozônio, polimento e cuidado com a pintura para carros e motos. Nota 5,0 em 564 avaliações. WhatsApp (21) 97259-5442.">
 <link rel="canonical" href="https://nutritrainrdev.github.io/doublebox-estetica/">
-<meta name="theme-color" content="#ff6b1a">
+<meta name="theme-color" content="#f8f8f8">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <meta property="og:type" content="website">
@@ -116,6 +116,8 @@ h1 .ln>span{display:block}
 .hero-copy .sub{font-size:max(1.125rem,var(--s-body));line-height:1.5;max-width:36ch;margin-top:28px}
 .hero-copy .acts{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center;margin-top:30px}
 .stars{display:flex;align-items:center;gap:12px;margin-top:40px;font-size:var(--s-small)}
+.stars{transition:opacity .2s}
+.stars:hover{opacity:.75}
 .stars b{font:700 var(--s-lead)/1 var(--sans);letter-spacing:-.03em}
 
 /* about: inset panel */
@@ -271,13 +273,22 @@ h1 .ln>span{display:block}
   .js .box-v{clip-path:none;transition:none}
   .box,[data-speed]{transform:none!important}
 }
+
+/* Web Interface Guidelines */
+h1,h2,h3{text-wrap:balance}
+section[id]{scroll-margin-top:12px}
+a,button,label{touch-action:manipulation;-webkit-tap-highlight-color:rgba(127,127,127,.18)}
+body{padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)}
+b,output{font-variant-numeric:tabular-nums}
+.nw{white-space:nowrap}
+@media (max-width:900px){html{scroll-padding-bottom:88px}}
 </style>
 </head>
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
 <header class="top">
-  <a class="brand" href="#" aria-label="Doublebox, início"><span class="mark" aria-hidden="true"></span>Doublebox</a>
+  <a class="brand" translate="no" href="#" aria-label="Doublebox, início"><span class="mark" aria-hidden="true"></span>Doublebox</a>
   <nav class="nav" aria-label="Seções">
     <a href="#servicos">Serviços</a>
     <a href="#avaliacoes">Avaliações</a>
@@ -370,25 +381,25 @@ h1 .ln>span{display:block}
     <div class="cpn-l">
       <h2 id="ag-h">Monte seu agendamento</h2>
       <p>Marque o que o carro ou a moto precisa. O pedido sai pronto no WhatsApp da Doublebox.</p>
-      <p class="or">Prefere falar direto? <a class="link" href="https://wa.me/5521972595442" target="_blank" rel="noopener">(21) 97259-5442</a></p>
+      <p class="or">Prefere falar direto? <a class="link" href="https://wa.me/5521972595442" target="_blank" rel="noopener"><span class="nw">(21)&nbsp;97259&#8209;5442</span></a></p>
     </div>
     <form id="ag" action="https://wa.me/5521972595442" method="get" target="_blank">
       <label class="sr" for="nome">Seu nome</label>
-      <input type="text" id="nome" placeholder="Seu nome" autocomplete="given-name">
+      <input type="text" id="nome" name="nome" placeholder="Seu nome…" autocomplete="given-name">
       <label class="sr" for="veic">Veículo</label>
-      <input type="text" id="veic" placeholder="Veículo (ex.: Onix branco, moto CG)">
+      <input type="text" id="veic" name="veiculo" placeholder="Veículo, ex.: Onix branco…" autocomplete="off">
       <fieldset>
         <legend>Serviços</legend>
         <div class="chips">
-          <input type="checkbox" id="s1" value="Lavagem"><label for="s1">Lavagem</label>
-          <input type="checkbox" id="s2" value="Limpeza técnica"><label for="s2">Limpeza técnica</label>
-          <input type="checkbox" id="s3" value="Higienização com ozônio"><label for="s3">Ozônio</label>
-          <input type="checkbox" id="s4" value="Polimento"><label for="s4">Polimento</label>
-          <input type="checkbox" id="s5" value="Cuidado com a pintura"><label for="s5">Pintura</label>
+          <input type="checkbox" name="servico" id="s1" value="Lavagem"><label for="s1">Lavagem</label>
+          <input type="checkbox" name="servico" id="s2" value="Limpeza técnica"><label for="s2">Limpeza técnica</label>
+          <input type="checkbox" name="servico" id="s3" value="Higienização com ozônio"><label for="s3">Ozônio</label>
+          <input type="checkbox" name="servico" id="s4" value="Polimento"><label for="s4">Polimento</label>
+          <input type="checkbox" name="servico" id="s5" value="Cuidado com a pintura"><label for="s5">Pintura</label>
         </div>
       </fieldset>
       <label class="lbl" for="dia">Dia de preferência</label>
-      <input type="date" id="dia">
+      <input type="date" id="dia" name="dia" autocomplete="off">
       <input type="hidden" name="text" id="msg" value="Olá! Vim pelo site e gostaria de agendar um serviço.">
       <button class="btn btn-ink" type="submit">Enviar pelo WhatsApp</button>
     </form>
@@ -402,7 +413,7 @@ h1 .ln>span{display:block}
     <dl class="rv">
       <div><dt>Endereço</dt><dd><a class="link" href="https://www.google.com/maps/dir/?api=1&amp;destination=R.+Domingos+de+Magalh%C3%A3es%2C+381+-+Maria+da+Gra%C3%A7a%2C+Rio+de+Janeiro+-+RJ%2C+20785-352" target="_blank" rel="noopener">R. Domingos de Magalhães, 381<br>Maria da Graça, Rio de Janeiro, RJ<br>20785-352</a></dd></div>
       <div><dt>Horário</dt><dd>Fecha às 18h. Confirme o dia pelo WhatsApp.</dd></div>
-      <div><dt>WhatsApp</dt><dd><a class="link" href="https://wa.me/5521972595442" target="_blank" rel="noopener">(21) 97259-5442</a> · <a class="link" href="tel:+5521972595442">ligar</a></dd></div>
+      <div><dt>WhatsApp</dt><dd><a class="link" href="https://wa.me/5521972595442" target="_blank" rel="noopener"><span class="nw">(21)&nbsp;97259&#8209;5442</span></a> · <a class="link" href="tel:+5521972595442">ligar</a></dd></div>
     </dl>
     <div class="acts rv">
       <a class="btn btn-ink" href="https://www.google.com/maps/dir/?api=1&amp;destination=R.+Domingos+de+Magalh%C3%A3es%2C+381+-+Maria+da+Gra%C3%A7a%2C+Rio+de+Janeiro+-+RJ%2C+20785-352" target="_blank" rel="noopener">Traçar rota no Google Maps</a>
@@ -415,12 +426,12 @@ h1 .ln>span{display:block}
   <div class="foot-main">
     <h2 class="h2"><span class="mark" aria-hidden="true"></span>Agende seu horário</h2>
     <div class="foot-acts">
-      <a class="btn" href="https://wa.me/5521972595442?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20servi%C3%A7o." target="_blank" rel="noopener">WhatsApp (21) 97259-5442</a>
+      <a class="btn" href="https://wa.me/5521972595442?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20servi%C3%A7o." target="_blank" rel="noopener">WhatsApp <span class="nw">(21)&nbsp;97259&#8209;5442</span></a>
       <a class="btn btn-white" href="https://www.google.com/maps/dir/?api=1&amp;destination=R.+Domingos+de+Magalh%C3%A3es%2C+381+-+Maria+da+Gra%C3%A7a%2C+Rio+de+Janeiro+-+RJ%2C+20785-352" target="_blank" rel="noopener">Como chegar</a>
     </div>
   </div>
   <div class="foot-meta">
-    <p><b>Doublebox Estética Automotiva</b><br>Carros e motos</p>
+    <p><b translate="no">Doublebox Estética Automotiva</b><br>Carros e motos</p>
     <p>R. Domingos de Magalhães, 381<br>Maria da Graça, Rio de Janeiro, RJ</p>
     <p>Fecha às 18h<br>5,0 no Google, 564 avaliações</p>
     <p class="r"><a class="link" href="#">Voltar ao topo</a><br>Imagens e vídeo ilustrativos</p>
